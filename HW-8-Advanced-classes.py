@@ -61,7 +61,7 @@ def recuperation(animal: AnyAnimal):
 def an_recuperation(animal: AnyAnimal):
     if animal.current_power - animal.max_power * 0.3 <= 0:
         forest.remove_animal(animal)
-        print(f"{animal.__class__.__name__} died in a battle")
+        print(f"{animal.__class__.__name__} died")
     else:
         animal.current_power = round(animal.current_power - animal.max_power * 0.3, 1)
         print(f"{animal.__class__.__name__} has {animal.current_power} power left after failed")
@@ -88,7 +88,7 @@ class Forest:
             if x.__class__.__name__ == 'Predator':
                 print(f'{x.__class__.__name__} is in forest')
                 if len(list(self.animals.values())) == 1:
-                    print(f'Only 1 {x.__class__.__name__} live in forest')
+                    print(f'Only {x.__class__.__name__} live in forest')
                     return False
                 return True
         print(f'Only {x.__class__.__name__} live in forest')
